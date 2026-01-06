@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (activeView.id === "recap-unlock") {
       // Rimuovi il timer dal DOM
       if (timer.parentNode) timer.parentNode.removeChild(timer);
+    } else if (activeView.id === "final-vote-overlay") {
+      // Rimuovi il timer dal DOM
+      if (timer.parentNode) timer.parentNode.removeChild(timer);
     } else {
       // Timer normale in header
       headerTimerSpace.appendChild(timer);
