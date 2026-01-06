@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./style/overlay-section.css" />
     <link rel="stylesheet" href="./style/world-rank.css" />
     <link rel="stylesheet" href="./style/recap-lock.css" />
+    <link rel="stylesheet" href="./style/recap-unlock.css" />
 
     <link rel="stylesheet" href="https://use.typekit.net/onf3tub.css" />
   </head>
@@ -49,6 +50,7 @@
           </svg>
           <div class="id-number" id="user-id">0123456789</div>
         </div>
+        <button data-view="recap-unlock"></button>
         <div class="timer-space">
           <div class="timer-text">voting closes in:</div>
           <div class="timer" id="timer">00:00:00</div>
@@ -1094,12 +1096,12 @@
         </footer>
       </section>
 
-          <!--
+      <!--
       =======================
       recap unlocked section
       =======================
       -->
-      <section id="recap-unlock" class="view">
+      <section id="recap-unlock" class="view active">
         <div class="content">
           <div class="recap-lock-content">
             <div class="recap-graphic">
@@ -1162,7 +1164,7 @@
       </section>
 
       <!-- overlay pagina wolrd : ranking complete-->
-      <section id="world-rank-overlay" class="subsection view active">
+      <section id="world-rank-overlay" class="subsection view">
         <div class="upper-content-wrap">
           <div class="rank-header-content">
             <button id="close-align-recap-btn" data-view="world">X</button>
@@ -1433,10 +1435,6 @@
           </div>
         </div>
       </section>
-
-
-
-
     </main>
 
     <!--
@@ -1444,211 +1442,18 @@
     -->
 
     <!--script gestione spa-->
-    <script>
-      // funzione che resetta lo scroll di tutti gli elementi dentro un container
-      function resetScroll(container) {
-        container.scrollTop = 0;
-        const scrollables = container.querySelectorAll("div");
-        scrollables.forEach((el) => (el.scrollTop = 0));
-      }
-
-      // funzione che attiva una vista
-      function setActiveView(targetView) {
-        // seleziona dinamicamente tutte le viste
-        const views = document.querySelectorAll("main .view");
-        views.forEach((view) => view.classList.remove("active"));
-
-        const activeSection = document.getElementById(targetView);
-        if (activeSection) {
-          activeSection.classList.add("active");
-          resetScroll(activeSection);
-        }
-
-        // seleziona dinamicamente tutti i bottoni con data-view
-        const buttons = document.querySelectorAll("[data-view]");
-        buttons.forEach((btn) => btn.classList.remove("active"));
-
-        const activeButton = document.querySelector(
-          `[data-view="${targetView}"]`
-        );
-        if (activeButton) {
-          activeButton.classList.add("active");
-        }
-      }
-
-      // delega click a tutti i bottoni con data-view
-      document.addEventListener("click", (e) => {
-        const btn = e.target.closest("[data-view]");
-        if (btn) {
-          setActiveView(btn.dataset.view);
-        }
-      });
-
-      // allineamento al load
-      document.addEventListener("DOMContentLoaded", () => {
-        const initialView = document.querySelector("main .view.active");
-        if (initialView) {
-          setActiveView(initialView.id);
-        }
-      });
-    </script>
+    <script src="./scripts/spa.js" type="module"></script>
 
     <!--script timer-->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        /* ===================== ELEMENTI DOM  ====================== */
-
-        const timer = document.getElementById("timer");
-        const headerTimerSpace = document.querySelector(".timer-space");
-        const headerTimerText = document.querySelector(".timer-text");
-        const recapTimerContent = document.querySelector(".timer-content");
-        const navButtons = document.querySelectorAll("nav button");
-
-        if (!timer || !headerTimerSpace || !recapTimerContent) {
-          console.error("Timer elements missing in DOM");
-          return;
-        }
-
-        /* ===================== COUNTDOWN ====================== */
-
-        const endTime = new Date("2026-01-08T18:00:00").getTime();
-        let timerInterval = null;
-
-        function updateTimer() {
-          const now = Date.now();
-          let remaining = endTime - now;
-
-          if (remaining <= 0) {
-            remaining = 0;
-            clearInterval(timerInterval);
-          }
-
-          const hours = Math.floor(remaining / (1000 * 60 * 60));
-          const minutes = Math.floor(
-            (remaining % (1000 * 60 * 60)) / (1000 * 60)
-          );
-          const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
-
-          timer.textContent =
-            String(hours).padStart(2, "0") +
-            ":" +
-            String(minutes).padStart(2, "0") +
-            ":" +
-            String(seconds).padStart(2, "0");
-        }
-
-        updateTimer();
-        timerInterval = setInterval(updateTimer, 1000);
-
-        /* ===================== POSIZIONE TIMER ====================== */
-
-        function updateTimerPosition() {
-          const activeView = document.querySelector(".view.active");
-          const isRecap = activeView && activeView.id === "recap-lock";
-
-          if (isRecap) {
-            recapTimerContent.appendChild(timer);
-            if (headerTimerText) headerTimerText.style.display = "none";
-          } else {
-            headerTimerSpace.appendChild(timer);
-            if (headerTimerText) headerTimerText.style.display = "";
-          }
-        }
-
-        /* ===================== NAVIGAZIONE ====================== */
-
-        navButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const targetView = button.dataset.view;
-
-            document.querySelectorAll(".view").forEach((view) => {
-              view.classList.toggle("active", view.id === targetView);
-            });
-
-            updateTimerPosition();
-          });
-        });
-
-        /* =====================STATO INIZIALE ====================== */
-
-        updateTimerPosition();
-      });
-    </script>
+    <script src="./scripts/timer.js" type="module"></script>
 
     <!--gestione dimensioni pagina-->
-    <script>
-      function setVh() {
-        // 1% dell’altezza viewport reale
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-      }
-
-      // Aggiorna al load e al resize
-      setVh();
-      window.addEventListener("resize", setVh);
-    </script>
+    <script src="./scripts/page-size.js" type="module"></script>
 
     <!--diabilita doppio tocco e zoom-->
-    <script>
-      // Disabilita zoom su doppio click (desktop)
-      document.addEventListener(
-        "dblclick",
-        function (e) {
-          e.preventDefault();
-        },
-        { passive: false }
-      );
+    <script src="./scripts/unable-zoom.js"></script>
 
-      // Disabilita doppio tap (mobile – iOS / Android)
-      let lastTouchEnd = 0;
-
-      document.addEventListener(
-        "touchend",
-        function (e) {
-          const now = Date.now();
-          if (now - lastTouchEnd <= 300) {
-            e.preventDefault();
-          }
-          lastTouchEnd = now;
-        },
-        { passive: false }
-      );
-    </script>
-
-    <!--gestione overaly-->
     <!--gestione overlay-->
-    <script>
-      function setupOverlay(overlayId, openBtnId) {
-        const overlay = document.getElementById(overlayId);
-        const openBtn = document.getElementById(openBtnId);
-        const closeBtn = overlay.querySelector(".overlay-close");
-        const content = overlay.querySelector(".overlay-content");
-
-        // APERTURA
-        openBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          overlay.classList.add("active");
-        });
-
-        // CHIUSURA con ✕
-        closeBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          overlay.classList.remove("active");
-        });
-
-        // CLICK FUORI (overlay)
-        overlay.addEventListener("click", () => {
-          overlay.classList.remove("active");
-        });
-
-        // BLOCCA click interno
-        content.addEventListener("click", (e) => {
-          e.stopPropagation();
-        });
-      }
-
-      // Overlay "more about"
-      setupOverlay("align-about-overlay", "overlay-align-btn");
-    </script>
+    <script src="./scripts/overlay.js" type="module"></script>
   </body>
 </html>
