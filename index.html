@@ -13,15 +13,18 @@
     <link rel="stylesheet" href="./style/variables.css" />
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./style/align.css" />
-    <link rel="stylesheet" href="./style/overlay-section.css" />
+    <link rel="stylesheet" href="./style/subsection.css" />
     <link rel="stylesheet" href="./style/world-rank.css" />
     <link rel="stylesheet" href="./style/recap-lock.css" />
     <link rel="stylesheet" href="./style/recap-unlock.css" />
+    <link rel="stylesheet" href="./style/overlay.css" />
 
+    <!-- font webkit -->
     <link rel="stylesheet" href="https://use.typekit.net/onf3tub.css" />
   </head>
 
   <body>
+
     <!--
       =======================
       header
@@ -66,7 +69,7 @@
     </header>
 
     <main>
-      <section id="alignment" class="view">
+      <section id="alignment" class="view active">
         <div class="content">
           <div class="alignment-content">
             <div class="align-graphic">
@@ -456,7 +459,7 @@
         </div>
 
         <footer>
-          <button class="overlay-button-align">more about</button>
+          <button class="overlay-open-btn">more about</button>
         </footer>
       </section>
 
@@ -1054,7 +1057,7 @@
         </div>
 
         <footer>
-          <button class="overlay-button-world" id="overlay-world-btn">
+          <button class="overlay-open-btn">
             more about
           </button>
         </footer>
@@ -1092,7 +1095,7 @@
         </div>
 
         <footer>
-          <button class="overlay-button-align" id="overlay-align-btn">
+          <button class="overlay-open-btn" id="overlay-align-btn" >
             more about
           </button>
         </footer>
@@ -1498,7 +1501,7 @@
       </section>
 
       <!--
-        =============== OVERLAYS ===============
+        =============== SUBSECTIONS ===============
         -->
 
       <!-- overlay pagina alingment : personal -->
@@ -1799,7 +1802,7 @@
       </section>
 
       <!-- overlay pagina wolrd : ranking complete-->
-      <section id="final-vote-overlay" class="subsection view active">
+      <section id="final-vote-overlay" class="subsection view">
         <div class="upper-content-wrap">
           <div class="rank-header-content">
             <button id="close-vote-recap-btn" data-view="recap-unlock">
@@ -1939,6 +1942,22 @@
         </div>
       </section>
     </main>
+
+    <!--
+        =============== OVERLAY ===============
+    -->
+    <div class="overlay">
+      <div class="overlay-content">
+        <div class="content">
+          <button class="overlay-close">X</button>
+          <section id="more-about-alignment">more about alignment</section>
+          <section id="more-about-world">more about world rank</section>
+          testo di spiegazione per ulteriori chiarimenti che consentano di
+          capire meglio il contenuto della sezione che si sta visitando e i suoi
+          valori
+        </div>
+      </div>
+    </div>
 
     <!--
     =============== SCRIPTS ===============

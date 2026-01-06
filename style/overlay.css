@@ -1,31 +1,50 @@
-.overlay-align {
+.overlay {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 1999;
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.overlay-align.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* contenuto */
 .overlay-content {
-  position: absolute;
-  bottom: 0;
+  z-index: 2000;
+
+  width: var(--width);
+  height: 70vh;
+
+  background: var(--primary-color);
+
+  display: flex;
+}
+
+.overlay-content .content {
+  padding: var(--padding-vertical);
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 21vh);
+  height: 100%;
 
-  background: #f0f0f0;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
 
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-size: 1.2rem;
+}
+
+.overlay-content button {
+  width: 44px;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+  color: var(--primary-color);
+  border: none;
+  background: var(--secondary-color);
+  cursor: pointer;
 }
