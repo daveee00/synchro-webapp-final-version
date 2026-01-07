@@ -1,9 +1,12 @@
+/*==============================================*/
+/*===============ALIGNMENT PAGE=================*/
+/*==============================================*/
+
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
 }
 
 /*==============================================*/
@@ -17,20 +20,34 @@
   width: var(--width);
   padding: var(--padding);
   height: calc(100% - 24%);
-  display: flex;
-  flex-direction: row;
   position: relative;
 }
 .external-graphic,
 .internal-graphic {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  inset: 0; 
+  inset: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.content .alignment-content .align-graphic span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.external-graphic svg {
+  width: 80%;
+  height: 80%;
+}
+.internal-graphic svg {
+  width: 54%;
+  height: 54%;
 }
 /*==============================================*/
 .content .alignment-content .align-values {

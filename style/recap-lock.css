@@ -25,6 +25,18 @@
   position: relative;
 }
 
+.content .recap-lock-content .recap-graphic span {
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.content .recap-lock-content .recap-graphic span svg {
+  height: 100%;
+  width: 100%;
+}
+
+
+
 .content .recap-lock-content .recap-text {
     width: 90%;
     text-align: center;

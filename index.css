@@ -1,5 +1,3 @@
-
-
 /*style di elementi fissi*/
 
 body {
@@ -46,6 +44,11 @@ header .page-head .id-space {
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+}
+
+header .page-head .id-space svg {
+  height: 17px;
+  width: 13px;
 }
 
 header .page-head .timer-space {
@@ -139,8 +142,8 @@ footer button {
 }
 
 footer button:focus {
-    outline: none;
+  outline: none;
 }
 footer button:active {
-    background: none;
+  background: none;
 }
