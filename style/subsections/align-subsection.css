@@ -2,7 +2,7 @@
 /*=================== subsections PAGINA ALIGN / personal and country ===========================*/
 /*==============================================*/
 
-.upper-content-wrap {
+.align-subsection .upper-content-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +14,7 @@
 
 /*==============================================*/
 
-.upper-content-wrap .recap-lock-content {
+.align-subsection .upper-content-wrap .recap-lock-content {
   padding: var(--padding-vertical);
   width: var(--width);
   height: calc(100% - 40%);
@@ -24,7 +24,7 @@
   justify-content: space-between;
 }
 
-.upper-content-wrap button {
+.align-subsection .upper-content-wrap button {
   width: 44px;
   aspect-ratio: 1/1;
   border-radius: 0;
@@ -35,7 +35,7 @@
   z-index: 500;
 }
 
-.upper-content-wrap .view-score {
+.align-subsection .upper-content-wrap .view-score {
   height: 20%;
   width: 100%;
   text-transform: uppercase;
@@ -50,12 +50,12 @@
   position: relative;
 }
 
-.upper-content-wrap .recap-lock-content .view-graphic {
+.align-subsection .upper-content-wrap .recap-lock-content .view-graphic {
   height: 75%;
   position: relative;
 }
 
-.upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap {
+.align-subsection .upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap {
   height: 100%;
   width: 100%;
   aspect-ratio: 1/1;
@@ -63,32 +63,32 @@
   position: relative;
 }
 
-.upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap .holder {
+.align-subsection .upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap .holder {
   height: 100%;
   aspect-ratio: 1/1;
   position: absolute;
   right: 0;
 }
 
-.upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap .holder span {
+.align-subsection .upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap .holder span {
   height: 100%;
   width: 100%;
 }
 
 
-.upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap svg {
+.align-subsection .upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.graphic-wrap .ext span svg {
+.align-subsection .graphic-wrap .ext span svg {
   height: 100%;
   width: 100%;
 }
 
-.graphic-wrap .int span svg {
+.align-subsection .graphic-wrap .int span svg {
   width: 70%;
   height: 70%;
 }
