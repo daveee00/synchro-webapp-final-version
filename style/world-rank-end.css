@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 92%;
   overflow: hidden; /* blocca scroll */
 }
 
@@ -41,26 +41,6 @@
   width: 100%;
 }
 
-/*==============================================*/
-
-/*=============== MARQUEE ===============*/
-
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.track {
-  display: inline-flex;
-  align-items: center;
-  will-change: transform;
-}
-
-.track span {
-  padding-right: 3rem;
-  white-space: nowrap;
-}
 
 /*=============== RANK CONTENT ===============*/
 
@@ -183,4 +163,31 @@
 
 #world footer {
   overflow: hidden; /* impedisce scroll footer */
+}
+
+
+/*=============== MARQUEE ===============*/
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 40px; /* altezza del contenitore */
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  display: flex;
+  white-space: nowrap;
+  position: absolute;
+  will-change: transform;
+}
+
+.track span {
+  padding-right: 3rem; /* distanza tra i testi duplicati */
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: -3%;
+  font-weight: 300;
 }
