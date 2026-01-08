@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: start;
   padding: var(--padding);
   font-style: normal;
   font-weight: 500;
