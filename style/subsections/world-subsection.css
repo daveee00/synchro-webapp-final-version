@@ -83,11 +83,12 @@
 
 #world-rank-overlay .rank-content .line-ranking {
   width: 100%;
-  padding-top: 24px;
+  margin-top: 8px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  height: fit-content;
 }
 
 #world-rank-overlay .line-ranking .name-position {
@@ -96,6 +97,7 @@
   align-items: baseline;
   gap: 12px;
   width: 74%;
+  height: fit-content;
 }
 
 #world-rank-overlay .name-position .rank-position {
@@ -148,3 +150,28 @@
   border: var(--border);
   color: var(--secondary-color);
 }
+
+/*===========================================*/
+
+.searched {
+ background: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+/* Stato base */
+.name-position {
+  background-color: transparent; /* stato iniziale */
+  transition: background-color 0.5s ease; /* fallback transizione */
+}
+
+/* Animazione flash */
+@keyframes highlightFlash {
+  0%   { background-color: grey; }
+  70%  { background-color: grey; }
+  100% { background-color: transparent; }
+}
+
+.name-position.flash {
+  animation: highlightFlash 2s ease forwards;
+}
+
