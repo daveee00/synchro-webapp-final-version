@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 84%;
   overflow: hidden; /* blocca scroll */
 }
 
@@ -48,6 +48,7 @@
   width: 100%;
   flex: 1 1 auto;
   min-height: 0; /* importante */
+
   display: flex;
   flex-direction: column;
   border-top: var(--border);
@@ -146,4 +147,31 @@
 #world footer {
   overflow: hidden; /* impedisce scroll footer */
   flex-shrink: 0;   /* evita che venga compresso */
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+
+footer {
+  width: 100%;
+  height: 8%;
+  border-top: var(--border);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+footer button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  padding: var(--padding-vertical);
+  color: var(--secondary-color);
+  -webkit-tap-highlight-color: transparent; /* iOS / Safari */
+  -webkit-touch-callout: none; /* menu copia/incolla */
+  user-select: none; /* niente selezione testo */
+  touch-action: manipulation;
 }
