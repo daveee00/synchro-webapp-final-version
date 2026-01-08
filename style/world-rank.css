@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: start;
   padding: var(--padding);
   font-style: normal;
   font-weight: 500;
@@ -96,7 +96,9 @@
 }
 
 .rank-content button {
-    margin: 24px 0px;
+    margin: 40px 0px;
     background: none;
     border: none;
 }
+
+
