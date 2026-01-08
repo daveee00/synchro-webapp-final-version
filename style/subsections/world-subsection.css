@@ -10,6 +10,7 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 /*==============================================*/
@@ -17,7 +18,6 @@
 #world-rank-overlay .upper-content-wrap .rank-header-content {
   padding: var(--padding-vertical);
   width: var(--width);
-  height: 5%;
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -44,21 +44,26 @@
   position: relative;
 }
 
-
-
 /*==============================================*/
 #world-rank-overlay .rank-section-wrap {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: calc(100% - 15% - 5%);
+  height: calc(
+    100% - 44px
+  ); /* lascia un margine per header, se vuoi usa auto */
   border-top: var(--border);
   margin-bottom: 15%;
 }
 
 #world-rank-overlay .rank-section-wrap .rank-content {
-  width: calc(100% - 40px);
-  height: calc(100%);
+  flex: 1; /* occupa tutto lo spazio disponibile */
   display: flex;
   flex-direction: column;
+  overflow-y: auto; /* scroll verticale */
+  padding: var(--padding);
+  width: calc(100% - 40px);
+  height: calc(100%);
   align-items: left;
   justify-content: start;
   padding: var(--padding);
@@ -120,24 +125,26 @@
   padding: var(--padding);
   width: var(--width);
   position: relative;
-    display: flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  opacity: 0.3;
-  
 }
 #world-rank-overlay .upper-content-wrap .search-wrap input {
   border: var(--border);
   border-radius: 0;
   width: 80%;
   height: 44px;
-  background: var(--secondary-color);
+  color: var(--secondary-color);
 }
+
+#world-rank-overlay .upper-content-wrap .search-wrap input::placeholder {
+  text-indent: 4px;
+}
+
 #world-rank-overlay .upper-content-wrap .search-wrap button {
   height: 44px;
   aspect-ratio: 1;
   border: var(--border);
-  background: var(--secondary-color);
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
