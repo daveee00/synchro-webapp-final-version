@@ -124,15 +124,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  opacity: 0.3;
+  
 }
 #world-rank-overlay .upper-content-wrap .search-wrap input {
   border: var(--border);
   border-radius: 0;
   width: 80%;
-  height: calc(100% - 40px);
+  height: 44px;
+  background: var(--secondary-color);
 }
 #world-rank-overlay .upper-content-wrap .search-wrap button {
-  background: green;
-  height: calc(100% - 40px);
+  height: 44px;
   aspect-ratio: 1;
+  border: var(--border);
+  background: var(--secondary-color);
+  color: var(--primary-color);
 }
