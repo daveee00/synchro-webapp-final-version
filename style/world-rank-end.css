@@ -131,6 +131,8 @@
   flex-direction: row;
   justify-content: flex-start;
   border-top: var(--border);
+  border-bottom: var(--border);
+
 }
 
 .rank-section-wrap button {
