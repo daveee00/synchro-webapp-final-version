@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===================== COUNTDOWN ====================== */
 
-  const endTime = new Date("2026-01-08T18:00:00").getTime();
+  const endTime = new Date("2026-01-10T00:00:00").getTime();
   let timerInterval = null;
 
   function updateTimer() {

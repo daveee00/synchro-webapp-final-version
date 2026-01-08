@@ -35,8 +35,6 @@
   width: 100%;
 }
 
-
-
 .content .recap-lock-content .recap-text {
     width: 90%;
     text-align: center;
@@ -72,4 +70,10 @@
 .timer-section-wrap #timer {
   font-size: 2.4rem;
   font-weight: bold;
+}
+
+/*==============================================*/
+
+#recap-lock button a {
+  opacity: 0.4;
 }
