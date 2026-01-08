@@ -31,10 +31,14 @@
       -->
     <header>
       <div class="page-head divide">
-        <div class="id-space" data-svg="./public/icons/profile.svg">
+        <button
+          class="id-space"
+          id="copyUrlBtn"
+          data-svg="./public/icons/profile.svg"
+        >
           <span class="svg-holder"></span>
           <div class="id-number" id="user-id">0123456789</div>
-        </div>
+        </button>
         <button data-view="recap-unlock" id="temporary" style="opacity: 0.3">
           go
         </button>
@@ -44,9 +48,9 @@
         </div>
       </div>
       <nav class="divide">
-        <button data-view="alignment" class="align-nav-btn">align</button>
-        <button data-view="world" class="world-nav-btn">world</button>
-        <button data-view="recap-lock" class="recap-nav-btn">recap</button>
+        <button data-view="alignment" class="align-nav-btn" id="align-nav-btn">align</button>
+        <button data-view="world" class="world-nav-btn" id="world-nav-btn">world</button>
+        <button data-view="recap-lock" class="recap-nav-btn" id="recap-nav-btn">recap</button>
       </nav>
     </header>
 
@@ -228,7 +232,7 @@
       recap unlocked section
       =======================
       -->
-      <section id="recap-unlock" class="view">
+      <section id="recap-unlock" class="view active">
         <div class="content">
           <div class="recap-unlock-content">
             <div class="time-change-wrap">
@@ -277,7 +281,7 @@
             id="your-vote-btn"
             data-view="final-vote-overlay"
           >
-            more about your vote
+            see full comparison ❯
           </button>
         </footer>
       </section>
@@ -287,7 +291,7 @@
         -->
 
       <!-- overlay pagina alingment : personal -->
-      <section id="align-personal-overlay" class="subsection view move-in-side">
+      <section id="align-personal-overlay" class="subsection view move-in-side align-subsection">
         <div class="upper-content-wrap">
           <div class="recap-lock-content">
             <div class="view-graphic">
@@ -314,7 +318,7 @@
       </section>
 
       <!-- overlay pagina alingment :country -->
-      <section id="align-country-overlay" class="subsection view move-in-side">
+      <section id="align-country-overlay" class="subsection view move-in-side align-subsection">
         <div class="upper-content-wrap">
           <div class="recap-lock-content">
             <div class="view-graphic">
@@ -341,7 +345,7 @@
       </section>
 
       <!-- overlay pagina wolrd : ranking complete-->
-      <section id="world-rank-overlay" class="subsection view active">
+      <section id="world-rank-overlay" class="subsection view world-subsection">
         <div class="upper-content-wrap">
           <div class="rank-header-content">
             <button id="close-align-recap-btn" data-view="world">❮</button>
@@ -795,5 +799,6 @@
 
     <!--import svg-->
     <script src="./scripts/svg-import.js" type="module"></script>
+
   </body>
 </html>

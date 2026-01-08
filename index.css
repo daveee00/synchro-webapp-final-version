@@ -3,7 +3,8 @@
 body {
   box-sizing: border-box;
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 100);
+  /*height: calc(var(--vh, 1vh) * 100);*/
+   min-height: 100vh;
   margin: 0;
   padding: 0;
   background: var(--primary-color);
@@ -25,7 +26,7 @@ header {
   display: flex;
   flex-direction: column;
   background: var(--primary-color);
-  z-index: 10;
+  z-index: 11;
 }
 
 header .page-head {
@@ -44,6 +45,9 @@ header .page-head .id-space {
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
 }
 
 header .page-head .id-space svg {
