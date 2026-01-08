@@ -17,7 +17,12 @@
     <link rel="stylesheet" href="./style/world-rank.css" />
     <link rel="stylesheet" href="./style/recap-lock.css" />
     <link rel="stylesheet" href="./style/recap-unlock.css" />
+    <link rel="stylesheet" href="./style/animation.css" />
+    <link rel="stylesheet" href="./style/tests.css" />
     <link rel="stylesheet" href="./style/overlay.css" />
+    <link rel="stylesheet" href="./style/more-about.css" />
+    <link rel="stylesheet" href="./style/subsections/align-subsection.css" />
+    <link rel="stylesheet" href="./style/subsections/world-subsection.css" />
 
     <!-- font webkit -->
     <link rel="stylesheet" href="https://use.typekit.net/onf3tub.css" />
@@ -48,9 +53,15 @@
         </div>
       </div>
       <nav class="divide">
-        <button data-view="alignment" class="align-nav-btn" id="align-nav-btn">align</button>
-        <button data-view="world" class="world-nav-btn" id="world-nav-btn">world</button>
-        <button data-view="recap-lock" class="recap-nav-btn" id="recap-nav-btn">recap</button>
+        <button data-view="alignment" class="align-nav-btn" id="align-nav-btn">
+          align
+        </button>
+        <button data-view="world" class="world-nav-btn" id="world-nav-btn">
+          world
+        </button>
+        <button data-view="recap-lock" class="recap-nav-btn" id="recap-nav-btn">
+          recap
+        </button>
       </nav>
     </header>
 
@@ -101,7 +112,9 @@
         </div>
 
         <footer>
-          <button class="overlay-open-btn">more about ↑</button>
+          <button class="overlay-open-btn" data-view="more-about-personal">
+            more about ↑
+          </button>
         </footer>
       </section>
 
@@ -232,7 +245,7 @@
       recap unlocked section
       =======================
       -->
-      <section id="recap-unlock" class="view active">
+      <section id="recap-unlock" class="view">
         <div class="content">
           <div class="recap-unlock-content">
             <div class="time-change-wrap">
@@ -291,7 +304,10 @@
         -->
 
       <!-- overlay pagina alingment : personal -->
-      <section id="align-personal-overlay" class="subsection view move-in-side align-subsection">
+      <section
+        id="align-personal-overlay"
+        class="subsection view move-in-side align-subsection active"
+      >
         <div class="upper-content-wrap">
           <div class="recap-lock-content">
             <div class="view-graphic">
@@ -318,7 +334,10 @@
       </section>
 
       <!-- overlay pagina alingment :country -->
-      <section id="align-country-overlay" class="subsection view move-in-side align-subsection">
+      <section
+        id="align-country-overlay"
+        class="subsection view move-in-side align-subsection"
+      >
         <div class="upper-content-wrap">
           <div class="recap-lock-content">
             <div class="view-graphic">
@@ -757,23 +776,43 @@
           </div>
         </div>
       </section>
+
+      <section
+        id="more-about-personal"
+        class="more-about subsection view move-in-side align-subsection"
+      >
+        <div class="upper-content-wrap">
+          <div class="recap-lock-content">
+            <div class="view-graphic">
+              <button class="close-subsection" data-view="alignment">❮</button>
+              <div class="graphic-wrap">
+                <div class="holder ext" data-svg="./public/icons/raggiera.svg">
+                  <span class="svg-holder"></span>
+                </div>
+                <div class="holder int" data-svg="./public/icons/raggiera.svg">
+                  <span class="svg-holder"></span>
+                </div>
+              </div>
+            </div>
+            <div class="view-score">67,9%</div>
+          </div>
+          <div class="comment-overlay-section-wrap">
+            <div class="comment-content">
+              <i>more about</i>
+              Here we're gonna place the comments about the score that the
+              person's measure has determined
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!--
         =============== OVERLAY ===============
     -->
-    <div class="overlay">
-      <div class="overlay-content">
-        <div class="content">
-          <button class="overlay-close">X</button>
-          <section id="more-about-alignment">more about alignment</section>
-          <section id="more-about-world">more about world rank</section>
-          testo di spiegazione per ulteriori chiarimenti che consentano di
-          capire meglio il contenuto della sezione che si sta visitando e i suoi
-          valori
-        </div>
-      </div>
-    </div>
+
+    <div id="feedback">copied to clipboard</div>
 
     <!--
     =============== SCRIPTS ===============
@@ -799,6 +838,5 @@
 
     <!--import svg-->
     <script src="./scripts/svg-import.js" type="module"></script>
-
   </body>
 </html>

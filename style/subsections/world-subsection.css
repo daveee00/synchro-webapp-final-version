@@ -1,10 +1,8 @@
-
-
 /*==============================================*/
-/*=================== OVERLAY PAGINA RECAP UNLOCK ===========================*/
+/*=================== OVERLAY PAGINA WORLD ===========================*/
 /*==============================================*/
 
-/*============== overlay =====================*/
+/*============== personal overlay =====================*/
 .upper-content-wrap {
   display: flex;
   flex-direction: column;
@@ -16,7 +14,7 @@
 
 /*==============================================*/
 
-#final-vote-overlay .upper-content-wrap .rank-header-content {
+.upper-content-wrap .rank-header-content {
   padding: var(--padding-vertical);
   width: var(--width);
   height: 5%;
@@ -26,33 +24,40 @@
   align-items: center;
   justify-content: flex-start;
 
-  font-style: normal;
-  font-weight: 500;
-  font-size: 140%;
-  letter-spacing: -3%;
-  line-height: 1;
 }
 
-#final-vote-overlay .upper-content-wrap button {
+.upper-content-wrap button {
   width: 44px;
   aspect-ratio: 1/1;
   border-radius: 0;
   color: var(--secondary-color);
   border: none;
-  background: none;
+  position: relative;
 }
 
+.upper-content-wrap .header-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 140%;
+  letter-spacing: -3%;
+  line-height: 1;
+  position: relative;
+
+
+}
+
+
 /*==============================================*/
 
 /*==============================================*/
-#final-vote-overlay .rank-section-wrap {
+#world-rank-overlay .rank-section-wrap {
   width: 100%;
   height: calc(100% - 15%);
   border-top: var(--border);
   margin-bottom: 15%;
 }
 
-#final-vote-overlay .rank-section-wrap .rank-content {
+#world-rank-overlay .rank-section-wrap .rank-content {
   width: calc(100% - 40px);
   height: calc(100%);
   display: flex;
@@ -70,11 +75,11 @@
   -ms-overflow-style: none; /* IE / Edge legacy */
 }
 
-#final-vote-overlay .rank-content::-webkit-scrollbar {
+#world-rank-overlay .rank-content::-webkit-scrollbar {
   display: none;
 }
 
-#final-vote-overlay .rank-content .line-ranking {
+#world-rank-overlay .rank-content .line-ranking {
   width: 100%;
   padding-top: 24px;
   display: flex;
@@ -83,15 +88,31 @@
   align-items: baseline;
 }
 
-#final-vote-overlay .hour-of-day {
-  font-size: 1.2rem;
+#world-rank-overlay .line-ranking .name-position {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 12px;
+  width: 74%;
+}
+
+#world-rank-overlay .name-position .rank-position {
+  font-size: 0.8rem;
   letter-spacing: -3%;
   font-weight: 500;
 }
 
-#final-vote-overlay .activity-chosen {
+#world-rank-overlay .name-position .country-name {
   font-size: 1.8rem;
   letter-spacing: -3%;
   font-weight: 500;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#world-rank-overlay .country-rank-score {
+  font-size: 1.8rem;
+  letter-spacing: -3%;
+  font-weight: 500;
 }
