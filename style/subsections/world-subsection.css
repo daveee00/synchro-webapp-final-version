@@ -3,7 +3,7 @@
 /*==============================================*/
 
 /*============== personal overlay =====================*/
-.upper-content-wrap {
+#world-rank-overlay .upper-content-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +14,7 @@
 
 /*==============================================*/
 
-.upper-content-wrap .rank-header-content {
+#world-rank-overlay .upper-content-wrap .rank-header-content {
   padding: var(--padding-vertical);
   width: var(--width);
   height: 5%;
@@ -23,36 +23,33 @@
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
-
 }
 
-.upper-content-wrap button {
+#world-rank-overlay .upper-content-wrap button {
   width: 44px;
   aspect-ratio: 1/1;
   border-radius: 0;
   color: var(--secondary-color);
+  background: none;
   border: none;
   position: relative;
 }
 
-.upper-content-wrap .header-text {
+#world-rank-overlay .upper-content-wrap .header-text {
   font-style: normal;
   font-weight: 500;
   font-size: 140%;
   letter-spacing: -3%;
   line-height: 1;
   position: relative;
-
-
 }
 
 
-/*==============================================*/
 
 /*==============================================*/
 #world-rank-overlay .rank-section-wrap {
   width: 100%;
-  height: calc(100% - 15%);
+  height: calc(100% - 15% - 5%);
   border-top: var(--border);
   margin-bottom: 15%;
 }
@@ -63,7 +60,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: start;
   padding: var(--padding);
   font-style: normal;
   font-weight: 500;
@@ -115,4 +112,27 @@
   font-size: 1.8rem;
   letter-spacing: -3%;
   font-weight: 500;
+}
+
+/*==============================================*/
+#world-rank-overlay .upper-content-wrap .search-wrap {
+  height: 15%;
+  padding: var(--padding);
+  width: var(--width);
+  position: relative;
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#world-rank-overlay .upper-content-wrap .search-wrap input {
+  border: var(--border);
+  border-radius: 0;
+  width: 80%;
+  height: calc(100% - 40px);
+}
+#world-rank-overlay .upper-content-wrap .search-wrap button {
+  background: green;
+  height: calc(100% - 40px);
+  aspect-ratio: 1;
 }
