@@ -50,10 +50,9 @@
   flex-direction: column;
   width: 100%;
   height: calc(
-    100% - 44px
+    100%
   ); /* lascia un margine per header, se vuoi usa auto */
   border-top: var(--border);
-  margin-bottom: 15%;
 }
 
 #world-rank-overlay .rank-section-wrap .rank-content {
