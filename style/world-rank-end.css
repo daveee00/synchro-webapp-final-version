@@ -42,6 +42,31 @@
 }
 
 /*==============================================*/
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-flex;
+  align-items: center;
+  will-change: transform;
+}
+
+.track span {
+  padding-right: 3rem; /* spazio tra le ripetizioni */
+  white-space: nowrap;
+}
+
+/*==============================================*/
+
+.content .winner-country-wrap {
+  width: 100%;
+  height: calc(100% - 40%);
+  border-top: var(--border);
+  overflow: hidden; /* blocca scroll */
+}
 
 .content .rank-section-wrap {
   width: 100%;
@@ -111,8 +136,8 @@
 /*=============== RANK CONTENT ===============*/
 
 .rank-section-wrap .rank-content {
- flex: 1 1 auto;
-  min-height: 0;       /* fondamentale per scroll */
+  flex: 1 1 auto;
+  min-height: 0; /* fondamentale per scroll */
   width: calc(100% - 48px);
   padding: var(--padding);
   padding-bottom: 64px; /* evita taglio ultimo elemento */
@@ -132,7 +157,7 @@
 }
 
 .rank-content::-webkit-scrollbar {
-  display: none;               /* Chrome / Safari */
+  display: none; /* Chrome / Safari */
 }
 
 .rank-content {
