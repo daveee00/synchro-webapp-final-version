@@ -68,6 +68,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 .align-values .value:first-of-type {
   align-items: flex-start;
@@ -93,7 +94,7 @@
 
 .value-percentage {
   text-transform: uppercase;
-  font-family: "helvetica-neue-lt-pro-cond", sans-serif;
+  font-family: "helvetica-neue-lt-pro", sans-serif;
   font-size: 2.4rem;
   font-style: normal;
   font-weight: 700;

@@ -12,15 +12,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 92%;
+  height: 84%;
   overflow: hidden; /* blocca scroll */
+  
 }
 
 /*==============================================*/
 
 .content .visual-map-content {
   width: 100%;
-  height: 40%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,6 +60,7 @@
 .rank-section-wrap .rank-content {
   flex: 1 1 auto;
   min-height: 0; /* fondamentale per scroll */
+  height: 40%;
   width: var(--width);
   padding: var(--padding);
   padding-bottom: 64px; /* evita taglio ultimo elemento */
@@ -143,7 +145,7 @@
 
 .rank-section-wrap .winner-wrap {
   width: var(--width);
-  height: 30%;
+  height: 20%;
   padding: var(--padding);
   display: flex;
   flex-direction: column;
@@ -163,10 +165,28 @@
    FOOTER
 =========================== */
 
-#world footer {
-  overflow: hidden; /* impedisce scroll footer */
+
+footer {
+  width: 100%;
+  height: 8%;
+  border-top: var(--border);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
+footer button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  padding: var(--padding-vertical);
+  color: var(--secondary-color);
+  -webkit-tap-highlight-color: transparent; /* iOS / Safari */
+  -webkit-touch-callout: none; /* menu copia/incolla */
+  user-select: none; /* niente selezione testo */
+  touch-action: manipulation;
+}
 
 /*=============== MARQUEE ===============*/
 
