@@ -161,7 +161,7 @@
 
 .rank-section-wrap .winner-wrap {
   width: var(--width);
-  height: 20%;
+  height: 30%;
   padding: var(--padding);
   display: flex;
   flex-direction: column;
