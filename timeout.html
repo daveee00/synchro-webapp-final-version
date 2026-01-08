@@ -439,43 +439,5 @@
 
     <!--script per generazione casuale comparazione misure-->
     <script src="./scripts/vote-close/comparison.js"></script>
-
-    <script>
-      const track = document.getElementById("track");
-      const text = document.getElementById("text");
-
-      let x = 0;
-      const speed = 0.4;
-
-      // duplica lo span finché riempie lo schermo + buffer
-      function fillTrack() {
-        const trackWidth = track.scrollWidth;
-        const marqueeWidth = track.parentElement.offsetWidth;
-
-        while (trackWidth < marqueeWidth * 2) {
-          track.appendChild(text.cloneNode(true));
-        }
-      }
-
-      fillTrack();
-
-      function animate() {
-        x -= speed;
-
-        const first = track.children[0];
-        const firstWidth =
-          first.offsetWidth + parseFloat(getComputedStyle(track).gap);
-
-        if (-x >= firstWidth) {
-          x += firstWidth;
-          track.appendChild(first);
-        }
-
-        track.style.transform = `translate3d(${x}px,0,0)`;
-        requestAnimationFrame(animate);
-      }
-
-      animate();
-    </script>
   </body>
 </html>
