@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 8%);
   position: relative;
 }
 
@@ -18,11 +18,11 @@
 .more-about .upper-content-wrap .recap-lock-content {
   padding: var(--padding-vertical);
   width: var(--width);
-  height: calc(100% - 40%);
+  height: calc(100% - 70%);
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  border: none;
 }
 
 .more-about .upper-content-wrap button {
@@ -36,23 +36,8 @@
   z-index: 500;
 }
 
-.more-about .upper-content-wrap .view-score {
-  height: 20%;
-  width: 100%;
-  text-transform: uppercase;
-  font-family: "helvetica-neue-lt-pro-cond", sans-serif;
-  font-size: 9.4cqh;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: -2%;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  position: relative;
-}
-
 .more-about .upper-content-wrap .recap-lock-content .view-graphic {
-  height: 75%;
+  height: 100%;
   position: relative;
 }
 
@@ -60,7 +45,6 @@
   height: 100%;
   width: 100%;
   aspect-ratio: 1/1;
-  right: 0;
   position: relative;
 }
 
@@ -68,7 +52,8 @@
   height: 100%;
   aspect-ratio: 1/1;
   position: absolute;
-  right: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .more-about .upper-content-wrap .recap-lock-content .view-graphic .graphic-wrap .holder span {
@@ -96,10 +81,9 @@
 
 /*==============================================*/
 
-.more-about .subsection .comment-overlay-section-wrap {
+.more-about .comment-overlay-section-wrap {
   width: 100%;
-  height: 40%;
-  border-top: var(--border);
+  height: 70%;
 }
 
 .more-about .comment-overlay-section-wrap .comment-content {
@@ -113,7 +97,40 @@
   padding: var(--padding);
   font-style: normal;
   font-weight: 500;
-  font-size: 140%;
+  font-size: 1rem;
   letter-spacing: -3%;
-  line-height: 1;
+  line-height: 1.2;
+}
+
+/* base */
+.more-about .holder .svg-holder {
+  display: inline-block;
+}
+
+/* rotazione oraria */
+.more-about .holder.ext .svg-holder {
+  animation: rotate-cw 40s linear infinite;
+}
+
+/* rotazione antioraria */
+.more-about .holder.int .svg-holder {
+  animation: rotate-ccw 40s linear infinite;
+}
+
+@keyframes rotate-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
