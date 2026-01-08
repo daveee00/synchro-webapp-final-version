@@ -134,77 +134,7 @@
             <span class="svg-holder"></span>
           </div>
           <div class="rank-section-wrap">
-            <div class="rank-content">
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
-              <div class="line-ranking">
-                <div class="name-position">
-                  <div class="rank-position">#001</div>
-                  <div class="country-name">Democratic Republic of Congo</div>
-                </div>
-                <div class="country-rank-score">87,5%</div>
-              </div>
+            <div class="rank-content" id="rank-preview">
               <button data-view="world-rank-overlay">expand full list ❯</button>
             </div>
           </div>
@@ -379,7 +309,7 @@
           </div>
           <div class="rank-section-wrap">
             <div class="search-wrap">
-              <input type="search" placeholder="Search for country..."/>
+              <input type="search" placeholder="Search for country..." />
               <button>O</button>
             </div>
             <div class="rank-content" id="complete-list">
@@ -532,37 +462,6 @@
     </script>
 
     <!--script che genera l'elenco completo dei paesi-->
-    <script>
-      const container = document.getElementById("complete-list");
-
-      // Genera 200 valori percentuali casuali
-      const scores = Array.from({ length: 200 }, () =>
-        (Math.random() * 100).toFixed(1)
-      );
-
-      // Ordina in modo decrescente
-      scores.sort((a, b) => b - a);
-
-      for (let i = 0; i < 200; i++) {
-        const line = document.createElement("div");
-        line.className = "line-ranking";
-
-        // Applica margine di 64px all'ultimo elemento
-        if (i === 199) {
-          line.style.marginBottom = "64px";
-        }
-
-        line.innerHTML = `
-      <div class="name-position">
-        <div class="rank-position">#${String(i + 1).padStart(3, "0")}</div>
-        <div class="country-name">Country ${i + 1}</div>
-      </div>
-      <div class="country-rank-score">${scores[i]}%</div>
-    `;
-
-        container.appendChild(line);
-      }
-    </script>
-
+    <script src="./scripts/complete-list-generator.js"></script>
   </body>
 </html>

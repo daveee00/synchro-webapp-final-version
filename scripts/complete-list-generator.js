@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("complete-list");
+  const preview = document.getElementById("rank-preview");
   if (!container) return; // sicurezza se l'elemento non esiste
+
+  // Trova il button dentro il preview, se esiste
+  const previewButton = preview ? preview.querySelector("button") : null;
 
   // Genera 200 valori percentuali casuali
   const scores = Array.from({ length: 200 }, () =>
@@ -28,5 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     container.appendChild(line);
+
+    // Inserisci i primi 10 elementi anche nel rank-preview prima del button
+    if (i < 10 && preview) {
+      const clone = line.cloneNode(true);
+      if (previewButton) {
+        preview.insertBefore(clone, previewButton);
+      } else {
+        preview.appendChild(clone);
+      }
+    }
   }
 });
