@@ -299,7 +299,7 @@
       </section>
 
       <!-- overlay pagina wolrd : ranking complete-->
-      <section id="world-rank-overlay" class="subsection view world-subsection">
+      <section id="world-rank-overlay" class="subsection view world-subsection move-in-side">
         <div class="upper-content-wrap">
           <div class="rank-header-content">
             <button id="close-align-recap-btn" data-view="world">❮</button>
@@ -324,7 +324,7 @@
       </section>
 
       <!-- overlay pagina recap unlocked : comparison votes -->
-      <section id="final-vote-overlay" class="subsection view">
+      <section id="final-vote-overlay" class="subsection view move-in-side">
         <div class="upper-content-wrap">
           <div class="rank-header-content">
             <button id="close-vote-recap-btn" data-view="recap-unlock">
@@ -341,7 +341,7 @@
       <!--more about / align page -->
       <section
         id="more-about-personal"
-        class="more-about view move-in-side align-subsection"
+        class="more-about view align-subsection"
       >
         <div class="upper-content-wrap">
           <div class="recap-lock-content">
@@ -388,7 +388,7 @@
       <!--more about / align page -->
       <section
         id="more-about-world"
-        class="more-about view move-in-side align-subsection"
+        class="more-about view align-subsection"
       >
         <div class="upper-content-wrap">
           <div class="comment-overlay-section-wrap">
@@ -432,8 +432,6 @@
     =============== SCRIPTS ===============
     -->
 
-    <!--script gestione spa-->
-    <script src="./scripts/spa.js" type="module"></script>
 
     <!--script timer-->
     <script src="./scripts/timer.js" type="module"></script>
@@ -453,6 +451,8 @@
     <!--import svg-->
     <script src="./scripts/svg-import.js" type="module"></script>
 
+    <!--script gestione spa-->
+    <script src="./scripts/spa.js" type="module"></script>
     <script>
       input.addEventListener("blur", () => {
         window.scrollTo(0, 0);

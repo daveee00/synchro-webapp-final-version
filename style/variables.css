@@ -30,6 +30,10 @@ button {
   touch-action: manipulation;
 }
 
+section {
+  background: var(--primary-color);
+}
+
 button:focus {
   outline: none;
 }
